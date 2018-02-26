@@ -10,6 +10,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 #安装cnpm，并安装hexo-cli
 RUN npm install -g cnpm --registry=https://registry.npm.taobao.org \
 	&& cnpm install -g hexo-cli \
-	&& cnpm install hexo-deployer-git --save
+	&& cnpm install hexo-deployer-git --save 
 
 ENTRYPOINT ["hexo"]

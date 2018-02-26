@@ -1,4 +1,4 @@
 #!/bin/bash
 
-blog_dir=~/www/html/blog
+blog_dir=YOUR_BLOG_DIR
 docker run --rm -v ~/.ssh:/root/.ssh -v ~/.gitconfig:/root/.gitconfig -v ${blog_dir}:/tmp myhexo $*
