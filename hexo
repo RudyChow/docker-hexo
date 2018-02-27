@@ -1,4 +1,4 @@
 #!/bin/bash
 
 blog_dir=YOUR_BLOG_DIR
-docker run --rm -v ~/.ssh:/root/.ssh -v ~/.gitconfig:/root/.gitconfig -v ${blog_dir}:/tmp myhexo $*
+docker run --rm -v ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v ${blog_dir}:/tmp myhexo $*

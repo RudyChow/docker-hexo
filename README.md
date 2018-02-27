@@ -4,9 +4,9 @@
 
  1.  先在github上添加自己的公钥
  2.  `~/.ssh`下存在对应的私钥
- 3.  `~/.ssh/konwn_hosts`中存在github的`host key`
- 4.  `~/.gitconfig`中存在自己的git信息
- 5.  `_config.yml`中的git部署地址是ssh方式
+ 3.  `_config.yml`中的git部署地址是ssh方式
+
+> 如果需要更换git的name和邮箱，请在Dockerfile中对ENV变量进行修改即可
 
 ## 使用说明
 
@@ -30,6 +30,6 @@ hexo version
 
 ## 补充
 
- 该镜像只是作为我不想在本地搭node的替代品
+ 该镜像只是作为我不想在本地搭node的替代品	
  如果需要有server功能请自行修改镜像进行接口映射等
  
