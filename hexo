@@ -1,4 +1,7 @@
 #!/bin/bash
 
-blog_dir=YOUR_BLOG_DIR
-docker run --rm -v ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro -v ${blog_dir}:/tmp myhexo $*
+blog_path=YOUR_BLOG_DIR
+rsa_path=~/.ssh/id_rsa
+handle_user=node
+
+docker run --rm -v ${rsa_path}:/tmp/hexo_config/id_rsa:ro -v $PWD/.gitconfig:/tmp/hexo_config/.gitconfig  -v ${blog_path}:/tmp/blog/ -u ${handle_user} -w /tmp/blog myhexo $@

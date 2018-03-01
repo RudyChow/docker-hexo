@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mkdir ~/.ssh
+cp /tmp/hexo_config/id_rsa ~/.ssh/id_rsa
+cp /tmp/hexo_config/.gitconfig ~/.gitconfig
+
+hexo $@
