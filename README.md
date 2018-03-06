@@ -12,20 +12,20 @@
 
 ```
 #创建镜像
-docker build -t myhexo .
+$ docker build -t myhexo .
 
 #修改脚本的写权限
-chmod +x hexo
+$ chmod +x hexo
 
-#修改脚本中的博客源码的地址
-#将下面的 ~\/www\/html\/blog 替换成自己的本地地址即可
-sed -i 's/YOUR_BLOG_DIR/~\/www\/html\/blog/g' hexo
+#修改脚本中的博客源码的路径和.gitconfig的路径
+blog_path=~/www/html/blog/
+gitconfig_path=~/docker/hexo/.gitconfig
 
 #之后即可根据hexo一样使用该镜像
-./hexo version
+$ ./hexo version
 #也可建立软链接到bin目录下,全局使用hexo
-ln -s /git_dir/hexo /usr/local/bin/hexo
-hexo version
+$ ln -s /git_dir/hexo /usr/local/bin/hexo
+$ hexo version
 ```
 
 ## 补充

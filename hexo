@@ -1,12 +1,12 @@
 #!/bin/bash
 
-blog_path=YOUR_BLOG_DIR
+blog_path=~/www/html/blog/
 rsa_path=~/.ssh/id_rsa
+gitconfig_path=~/docker/hexo/.gitconfig
 handle_user=node
 
-
-if [ $1 = 'server' ];then 
-	docker run --rm --name hexo_server -v ${rsa_path}:/tmp/hexo_config/id_rsa:ro -v $PWD/.gitconfig:/tmp/hexo_config/.gitconfig  -v ${blog_path}:/tmp/blog/ -u ${handle_user} -w /tmp/blog -p 4000:4000 -d myhexo $@
+if [ "$1" == 'server' ];then 
+	docker run --rm --name hexo_server -v ${rsa_path}:/tmp/hexo_config/id_rsa:ro -v ${gitconfig_path}:/tmp/hexo_config/.gitconfig  -v ${blog_path}:/tmp/blog/ -u ${handle_user} -w /tmp/blog -p 4000:4000 -d myhexo $@
 else
-	docker run --rm -v ${rsa_path}:/tmp/hexo_config/id_rsa:ro -v $PWD/.gitconfig:/tmp/hexo_config/.gitconfig  -v ${blog_path}:/tmp/blog/ -u ${handle_user} -w /tmp/blog myhexo $@
+	docker run --rm -v ${rsa_path}:/tmp/hexo_config/id_rsa:ro -v ${gitconfig_path}:/tmp/hexo_config/.gitconfig  -v ${blog_path}:/tmp/blog/ -u ${handle_user} -w /tmp/blog myhexo $@
 fi
