@@ -13,5 +13,3 @@ RUN npm install -g hexo-cli \
 #配置设定
 RUN echo -e "Host *\n\tStrictHostKeyChecking no" > /etc/ssh/ssh_config 
 COPY  ["docker-entrypoint","/usr/local/bin/docker-entrypoint"]
-
-ENTRYPOINT ["docker-entrypoint"]

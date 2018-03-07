@@ -26,6 +26,9 @@ $ ./hexo version
 #也可建立软链接到bin目录下,全局使用hexo
 $ ln -s /git_dir/hexo /usr/local/bin/hexo
 $ hexo version
+
+#开启服务，默认端口4000，可在脚本中修改
+$ hexo server
 ```
 
 ## 补充
